@@ -1,4 +1,4 @@
-=== Rust Starter ===
+=== Animate In ===
 Contributors:      kbat82
 Tags:              block
 Tested up to:      5.9
@@ -6,11 +6,22 @@ Stable tag:        0.1.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-An example block built using Rust and TypeScript
+A dead simple block to animate in "anything" when the block comes into view
 
 == Description ==
 
-This is a starter for building Gutenberg Blocks with Rust and TypeScript. You're not limited to Blocks, however.
+This block will just add a wrapper block with an inner group block inside it, which will let you add any content to it. When that block comes into view, it will animate in.
+
+- Follow [@kevinbatdorf](https://twitter.com/kevinbatdorf) on Twitter
+- View on [GitHub](https://github.com/KevinBatdorf/animate-in-block)
+
+= Features =
+- Set a threshold for when the block starts to animate
+- Enable/disable per block
+- Transition in left or right
+- Change the class name used to add your own custom animations
+- No lock in - eject the block and save the inner content
+
 
 == Installation ==
 
@@ -19,13 +30,9 @@ This is a starter for building Gutenberg Blocks with Rust and TypeScript. You're
 
 == Frequently Asked Questions ==
 
-= What is Rust? =
+= Can you add this feature? =
 
-Rust is a systems program that can compile to WebAssembly and be used in the browser via JavaScript.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+I'm purposely keeping this feature minimum, especially if it means adding bloat to the front end.
 
 == Screenshots ==
 
@@ -37,11 +44,5 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
-= 0.1.0 =
-* Release
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
+= 1.0.0 =
+* Initial release

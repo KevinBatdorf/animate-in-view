@@ -9,7 +9,7 @@ export type Attributes = {
     text: string
 }
 
-registerBlockType<Attributes>('kevinbatdorf/rust-starter', {
+registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
     ...blockConfig,
     icon: undefined,
     // Types seem to be mismatched if importing these from block.json
@@ -20,7 +20,7 @@ registerBlockType<Attributes>('kevinbatdorf/rust-starter', {
         },
     },
 
-    title: __('Rust Starter', 'rust-starter'),
+    title: __('Animate In', 'animate-in-view'),
     edit: ({ attributes, setAttributes }) => (
         <>
             <Controls attributes={attributes} setAttributes={setAttributes} />
