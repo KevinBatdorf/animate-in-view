@@ -26,6 +26,8 @@ export type Attributes = {
 registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
     ...blockConfig,
     icon: blockIcon,
+    // These attributes are duplicated here for TypeScript types (DefinitelyTyped)
+    // Which seemingly isn't up to date with the Gutenberg Block schema
     attributes: {
         animatein: {
             type: 'string',
