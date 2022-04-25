@@ -49,25 +49,6 @@ registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
         },
     },
     title: __('Animate In View', 'animate-in-view'),
-    transforms: {
-        from: [
-            {
-                type: 'block',
-                blocks: ['*'],
-                transform: () => {
-                    const { getSelectedBlock } = select('core/block-editor')
-                    const currentBlock = getSelectedBlock()
-                    console.log({ currentBlock })
-                    if (!currentBlock) return
-                    // This will just wrap the current block with our block
-                    return createBlock('kevinbatdorf/animate-in-view', {}, [
-                        // Cloning will prevent recursion issues
-                        cloneBlock(currentBlock),
-                    ])
-                },
-            } as TransformBlock<Attributes>,
-        ],
-    },
     edit: ({ attributes, setAttributes }) => (
         <>
             <Controls attributes={attributes} setAttributes={setAttributes} />
