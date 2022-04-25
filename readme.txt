@@ -23,9 +23,9 @@ The Animate In View block add a simple JavaScript watcher over all the inner blo
 
 = Tips =
 - You may want to wrap around or place within group blocks to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
-- Nest blocks to stagger animations. The outer block will only show when the entire block is in view, then each inner block will trigger there after.
+- Nest blocks to stagger animations. The animations won't start until all are in view, then one by one.
 - The Animate In View block comes with a single nested group block by default, but you can may others as well.
-- Use the list view to drag and drop blocks into group (or beside it).
+- Use the list view to drag and drop blocks into the group block (or beside it).
 
 == Installation ==
 
