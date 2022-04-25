@@ -5,8 +5,9 @@ A Gutenberg block that animates in when coming into view.
 View this block plugin [on WordPress.org](https://wordpress.org/plugins/animate-in-view)
 
 
-= Features =
+## Features
 - Set a threshold for when the block starts to animate
+- Wrap existing blocks with the Animate In block
 - Run only once, or each time it comes in/out of view
 - Transition in left, right, or neither (fade only)
 - Change the class name used to add your own custom animations

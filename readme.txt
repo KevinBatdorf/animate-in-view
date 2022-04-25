@@ -6,7 +6,7 @@ Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A dead-simple Gutenberg block to animate in "anything" when the block comes into view.
+A dead-simple Gutenberg block to animate in "anything" when the block comes into the user's view.
 
 == Description ==
 
@@ -18,14 +18,16 @@ The Animate In View block add a simple JavaScript watcher over all the inner blo
 = Features =
 - Set a threshold for when the block starts to animate
 - Run only once, or each time it comes in/out of view
+- Wrap any existing block with the Animate In block with the push of a button
 - Transition in left, right, or neither (fade only)
 - Change the class name used to add your own custom animations
 
-= Tips =
-- You may want to wrap around or place within group blocks to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
+= General Tips & Tricks =
+- You can wrap the currently selected block with an Animate In View block by pressing the icon toward the end of the toolbar. It will only show if it's not already the direct child of an Animate In View block.
+- You may want to place within group blocks to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
 - Nest blocks to stagger animations. The animations won't start until all are in view, then one by one.
-- The Animate In View block comes with a single nested group block by default, but you can may others as well.
-- Use the list view to drag and drop blocks into the group block (or beside it).
+- The Animate In View block comes with a single nested group block by default, but you may use others as well.
+- Use the list view to drag and drop blocks into the Animate In View block.
 
 == Installation ==
 
