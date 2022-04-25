@@ -26,6 +26,10 @@
         "threshold": {
             "type": "number",
             "default": 1.0
+        },
+        "timing": {
+            "type": "number",
+            "default": 1.0
         }
     },
     "supports": {

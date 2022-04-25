@@ -5,9 +5,8 @@ import {
     store as blockEditorStore,
 } from '@wordpress/block-editor'
 import { createBlock, registerBlockType, cloneBlock } from '@wordpress/blocks'
-import type { TransformBlock } from '@wordpress/blocks'
 import { ToolbarButton } from '@wordpress/components'
-import { useDispatch, useSelect, select } from '@wordpress/data'
+import { useDispatch, useSelect } from '@wordpress/data'
 import { addFilter } from '@wordpress/hooks'
 import { __ } from '@wordpress/i18n'
 import blockConfig from './block.json'
@@ -21,6 +20,7 @@ export type Attributes = {
     once: 1 | 0
     direction: 1 | -1 | 0
     threshold: number
+    timing: number
 }
 
 registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
@@ -46,6 +46,10 @@ registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
             default: 1,
         },
         threshold: {
+            type: 'number',
+            default: 1.0,
+        },
+        timing: {
             type: 'number',
             default: 1.0,
         },
