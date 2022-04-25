@@ -1,16 +1,7 @@
 .animate-in-view {
-    --tw-ring-inset: var(--tw-empty, /*!*/ /*!*/);
-    --tw-ring-offset-width: 0px;
-    --tw-ring-offset-color: transparent;
-    /* --tw-ring-color: you-may-want-to-update-this; */
+    opacity: 1 !important;
+    transform: translateX(0) !important;
+    transition-duration: 1.3s;
+    /* transition-property: opacity transform; */
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.animate-in-view *,
-.animate-in-view *:after,
-.animate-in-view *:before {
-    box-sizing: border-box;
-    border: 0 solid #e5e7eb;
-}
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* Add more styles here specific to the block/frontend */

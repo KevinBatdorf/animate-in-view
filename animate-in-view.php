@@ -1,7 +1,7 @@
 <?php
 /**
- * Plugin Name:       Animate In
- * Description:       Animate when in view, that's it
+ * Plugin Name:       Animate In View
+ * Description:       This block will animate in as soon as it enters the viewport of the browser window. That's it.
  * Requires at least: 5.9
  * Requires PHP:      7.0
  * Version:           1.0.0
@@ -15,4 +15,36 @@
 
 add_action('init', function () {
     register_block_type(__DIR__ . '/build');
+});
+
+// The JavaScript is minimal so it's easier to just maintain it here.
+add_action('wp_enqueue_scripts', function () {
+    wp_register_script('animate-in-view-js', false, [], '', true);
+    wp_enqueue_script('animate-in-view-js');
+    wp_add_inline_script(
+        'animate-in-view-js',
+        <<<JS
+(function() {
+'use strict';
+document.querySelectorAll('[animatein]').forEach(function (el) {
+    if (!Number(el.getAttribute('enabled'))) return;
+    const dir = el.getAttribute('direction');
+    el.style.opacity = 0;
+    el.style.transform = `translateX(calc(2rem * \${dir}))`;
+    const observer = new IntersectionObserver(function (entries) {
+        if (entries[0].intersectionRatio === 0) {
+            el.classList.remove(el.getAttribute('animatein'));
+            return;
+        }
+        if (entries[0].intersectionRatio < Number(el.getAttribute('threshold'))) {
+            return;
+        }
+        el.classList.add(el.getAttribute('animatein'));
+        Number(el.getAttribute('once')) && observer.unobserve(el);
+    }, { threshold: [Number(el.getAttribute('threshold')), 0] });
+    observer.observe(el);
+});
+})();
+JS
+    );
 });

@@ -14,3 +14,6 @@
 @tailwind components;
 @tailwind utilities;
 /* Add more styles here specific to the editor only */
+.animate-in-view-editor [role="presentation"] {
+    @apply bg-wp-theme-500;
+}

@@ -2,18 +2,35 @@
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 2,
     "name": "kevinbatdorf/animate-in-view",
-    "version": "0.1.0",
-    "title": "Animate In",
+    "version": "1.0.0",
+    "title": "Animate In View",
     "category": "common",
-    "description": "My amazing block",
+    "description": "Animates a block when it comes into view.",
     "attributes": {
-        "text": {
+        "animatein": {
             "type": "string",
-            "source": "text"
+            "default": "animate-in-view"
+        },
+        "enabled": {
+            "type": "number",
+            "default": 1
+        },
+        "once": {
+            "type": "number",
+            "default": 0
+        },
+        "direction": {
+            "type": "number",
+            "default": 1
+        },
+        "threshold": {
+            "type": "number",
+            "default": 1.0
         }
     },
     "supports": {
-        "html": false
+        "html": false,
+        "align": true
     },
     "textdomain": "animate-in-view",
     "editorScript": "file:./index.js",

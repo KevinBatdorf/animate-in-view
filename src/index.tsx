@@ -1,38 +1,60 @@
+import {
+    InnerBlocks,
+    useBlockProps as blockProps,
+} from '@wordpress/block-editor'
 import { registerBlockType } from '@wordpress/blocks'
-import { useBlockProps as blockProps } from '@wordpress/block-editor'
 import { __ } from '@wordpress/i18n'
-import { TheBlock } from './front/TheBlock'
-import { Controls } from './editor/Controls'
 import blockConfig from './block.json'
+import { Controls } from './editor/Controls'
+import './front/style.css'
+import { blockIcon } from './icons'
 
 export type Attributes = {
-    text: string
+    animatein: string
+    enabled: 1 | 0
+    once: 1 | 0
+    direction: 1 | -1 | 0
+    threshold: number
 }
 
 registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
     ...blockConfig,
-    icon: undefined,
-    // Types seem to be mismatched if importing these from block.json
+    icon: blockIcon,
     attributes: {
-        text: {
+        animatein: {
             type: 'string',
-            default: 'Loading...',
+            default: 'animate-in-view',
+        },
+        enabled: {
+            type: 'number',
+            default: 1,
+        },
+        once: {
+            type: 'number',
+            default: 0,
+        },
+        direction: {
+            type: 'number',
+            default: 1,
+        },
+        threshold: {
+            type: 'number',
+            default: 1.0,
         },
     },
-
-    title: __('Animate In', 'animate-in-view'),
+    title: __('Animate In View', 'animate-in-view'),
     edit: ({ attributes, setAttributes }) => (
         <>
             <Controls attributes={attributes} setAttributes={setAttributes} />
             <div {...blockProps()}>
-                <TheBlock {...attributes} />
+                <InnerBlocks template={[['core/group', {}]]} />
             </div>
         </>
     ),
     save: ({ attributes }) => {
         return (
-            <div {...blockProps.save()}>
-                <TheBlock {...attributes} />
+            <div {...blockProps.save()} {...attributes}>
+                <InnerBlocks.Content />
             </div>
         )
     },

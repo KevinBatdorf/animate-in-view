@@ -1,46 +1,50 @@
-=== Animate In ===
+=== Animate In View – A Gutenberg animation in block ===
 Contributors:      kbat82
-Tags:              block
+Tags:              animation, animate, in view, slide, fade, intersection, observer, block
 Tested up to:      5.9
-Stable tag:        0.1.0
+Stable tag:        1.0.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A dead simple block to animate in "anything" when the block comes into view
+A dead-simple Gutenberg block to animate in "anything" when the block comes into view.
 
 == Description ==
 
-This block will just add a wrapper block with an inner group block inside it, which will let you add any content to it. When that block comes into view, it will animate in.
+The Animate In View block add a simple JavaScript watcher over all the inner blocks you add within. When the Animtate In View block comes into view, it will simply fade and optionally slide in.
 
 - Follow [@kevinbatdorf](https://twitter.com/kevinbatdorf) on Twitter
 - View on [GitHub](https://github.com/KevinBatdorf/animate-in-block)
 
 = Features =
 - Set a threshold for when the block starts to animate
-- Enable/disable per block
-- Transition in left or right
+- Run only once, or each time it comes in/out of view
+- Transition in left, right, or neither (fade only)
 - Change the class name used to add your own custom animations
-- No lock in - eject the block and save the inner content
 
+= Tips =
+- You may want to wrap around or place within group blocks to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
+- Nest blocks to stagger animations. The outer block will only show when the entire block is in view, then each inner block will trigger there after.
+- The Animate In View block comes with a single nested group block by default, but you can may others as well.
+- Use the list view to drag and drop blocks into group (or beside it).
 
 == Installation ==
 
 1. Activate the plugin through the 'Plugins' screen in WordPress
 
-
 == Frequently Asked Questions ==
 
-= Can you add this feature? =
+= Can you add x feature? =
 
-I'm purposely keeping this feature minimum, especially if it means adding bloat to the front end.
+I'm purposely keeping this lightweight so don't plan on adding features, especially if it means adding bloat to the frontend. But open an issue on the GitHub repo and lets chat about it.
+
+= Why a block and not just extend all blocks? =
+
+This keeps block functionality composable. This block is very lightweight and does the minimum it needs to keep track of the blocks on screen and just animate them in. If you are looking for a fully featured animation suite, this isn't it.
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Simple, clean, consistent animations.
+2. Minimum controls to get the best results
 
 == Changelog ==
 
