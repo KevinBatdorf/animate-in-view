@@ -2,7 +2,7 @@
 Contributors:      kbat82
 Tags:              animation, animate, in view, slide, fade, intersection, observer, block
 Tested up to:      5.9
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -50,5 +50,5 @@ This keeps block functionality composable. This block is very lightweight and do
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 =
 * Initial release
