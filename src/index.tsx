@@ -21,6 +21,7 @@ export type Attributes = {
     direction: 1 | -1 | 0
     threshold: number
     timing: number
+    offset: string
 }
 
 registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
@@ -52,6 +53,10 @@ registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
         timing: {
             type: 'number',
             default: 1.0,
+        },
+        offset: {
+            type: 'string',
+            default: '2rem',
         },
     },
     title: __('Animate In View', 'animate-in-view'),
@@ -115,7 +120,7 @@ addFilter(
                         <ToolbarButton
                             showTooltip
                             onClick={handleClick}
-                            label={__('Wrap with Animate In View block')}
+                            label={__('Animate this block', 'animate-in-view')}
                             icon={blockIcon}
                         />
                     </BlockControls>

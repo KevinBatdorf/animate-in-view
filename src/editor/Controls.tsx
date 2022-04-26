@@ -38,6 +38,10 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
                                     'Visibility threshold',
                                     'animate-in-view',
                                 )}
+                                help={__(
+                                    'Determine how much of the element needs to be in view before the transition begins.',
+                                    'animate-in-view',
+                                )}
                                 step={0.1}
                                 min={0.1}
                                 max={1}
@@ -48,26 +52,14 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
                             />
                             <ToggleGroupControl
                                 onChange={(value: number) =>
-                                    update('once', value)
-                                }
-                                label={__('Animation count', 'animate-in-view')}
-                                value={attributes.once}
-                                isBlock>
-                                <ToggleGroupControlOption
-                                    value={1}
-                                    label={__('Once', 'animate-in-view')}
-                                />
-                                <ToggleGroupControlOption
-                                    value={0}
-                                    label={__('Infinite', 'animate-in-view')}
-                                />
-                            </ToggleGroupControl>
-                            <ToggleGroupControl
-                                onChange={(value: number) =>
                                     update('direction', value)
                                 }
                                 label={__(
-                                    'Transition start',
+                                    'Starting position',
+                                    'animate-in-view',
+                                )}
+                                help={__(
+                                    "Set this to 'None' to disable the slide animation.",
                                     'animate-in-view',
                                 )}
                                 value={attributes.direction}
@@ -85,29 +77,55 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
                                     label={__('Right', 'animate-in-view')}
                                 />
                             </ToggleGroupControl>
+                            <ToggleGroupControl
+                                onChange={(value: number) =>
+                                    update('once', value)
+                                }
+                                help={__(
+                                    "Set this to 'Infinite' to reset the animation when the element leaves the screen.",
+                                    'animate-in-view',
+                                )}
+                                label={__('Animation count', 'animate-in-view')}
+                                value={attributes.once}
+                                isBlock>
+                                <ToggleGroupControlOption
+                                    value={1}
+                                    label={__('Once', 'animate-in-view')}
+                                />
+                                <ToggleGroupControlOption
+                                    value={0}
+                                    label={__('Infinite', 'animate-in-view')}
+                                />
+                            </ToggleGroupControl>
                         </div>
                     </BaseControl>
                 </PanelBody>
             </InspectorControls>
             <InspectorAdvancedControls>
-                <div className="animate-in-view-editor">
-                    <TextControl
-                        label={__('Animation class', 'animate-in-view')}
-                        value={attributes.animatein}
-                        onChange={(value) => update('animatein', value)}
-                    />
-                    {/* Show the reset button if they changed the class */}
-                    {attributes.animatein === 'animate-in-view' ? null : (
-                        <Button
-                            variant="link"
-                            className="relative -top-4"
-                            onClick={() =>
-                                update('animatein', 'animate-in-view')
-                            }>
-                            {__('Reset', 'animate-in-view')}
-                        </Button>
-                    )}
-                </div>
+                <BaseControl id="advanced-settings">
+                    <div className="animate-in-view-editor">
+                        <TextControl
+                            label={__('Animation class', 'animate-in-view')}
+                            help={__(
+                                'Edit this to use custom animations',
+                                'animate-in-view',
+                            )}
+                            value={attributes.animatein}
+                            onChange={(value) => update('animatein', value)}
+                        />
+                        {/* Show the reset button if they changed the class */}
+                        {attributes.animatein === 'animate-in-view' ? null : (
+                            <Button
+                                variant="link"
+                                className="relative -top-4"
+                                onClick={() =>
+                                    update('animatein', 'animate-in-view')
+                                }>
+                                {__('Reset', 'animate-in-view')}
+                            </Button>
+                        )}
+                    </div>
+                </BaseControl>
             </InspectorAdvancedControls>
         </>
     )

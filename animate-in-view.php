@@ -29,8 +29,9 @@ add_action('wp_enqueue_scripts', function () {
 document.querySelectorAll('[animatein]').forEach(function (el) {
     if (!Number(el.getAttribute('enabled'))) return;
     const dir = el.getAttribute('direction');
+    const offset = el.getAttribute('offset');
     el.style.opacity = 0;
-    el.style.transform = `translateX(calc(2rem * \${dir}))`;
+    el.style.transform = `translateX(calc(\${offset} * \${dir}))`;
     const observer = new IntersectionObserver(function (entries) {
         if (entries[0].intersectionRatio === 0) {
             el.classList.remove(el.getAttribute('animatein'));

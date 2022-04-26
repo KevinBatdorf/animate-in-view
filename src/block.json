@@ -30,6 +30,10 @@
         "timing": {
             "type": "number",
             "default": 1.0
+        },
+        "offset": {
+            "type": "string",
+            "default": "2rem"
         }
     },
     "supports": {
