@@ -1,6 +1,6 @@
 {
     "name": "animate-in-view",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "description": "A Gutenberg block that animates in when coming into view.",
     "author": "Kevin Batdorf",
     "license": "GPL-2.0-or-later",
