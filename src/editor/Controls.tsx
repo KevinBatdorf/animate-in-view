@@ -85,7 +85,8 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
                                     "Set this to 'Infinite' to reset the animation when the element leaves the screen.",
                                     'animate-in-view',
                                 )}
-                                label={__('Animation count', 'animate-in-view')}
+                                // Is there a better word to use here?
+                                label={__('Frequency', 'animate-in-view')}
                                 value={attributes.once}
                                 isBlock>
                                 <ToggleGroupControlOption
