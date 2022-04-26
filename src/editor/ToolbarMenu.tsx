@@ -6,6 +6,7 @@ import { createBlock, cloneBlock } from '@wordpress/blocks'
 import { ToolbarButton } from '@wordpress/components'
 import { useDispatch, useSelect } from '@wordpress/data'
 import { __ } from '@wordpress/i18n'
+import blockConfig from '../block.json'
 import { blockIcon } from '../icons'
 
 export const ToolbarMenu = (props: any) => {
@@ -18,9 +19,7 @@ export const ToolbarMenu = (props: any) => {
     const handleClick = () => {
         // Cloning will prevent recursion issues
         const current = cloneBlock(getBlock(clientId))
-        const wrapped = createBlock('kevinbatdorf/animate-in-view', {}, [
-            current,
-        ])
+        const wrapped = createBlock(blockConfig.name, {}, [current])
         if (!wrapped) return
         replaceBlock(clientId, [wrapped])
     }
@@ -29,9 +28,9 @@ export const ToolbarMenu = (props: any) => {
     const parents = getBlockParents(clientId)
     if (
         (parents?.length > 0 &&
-            getBlockName(parents.at(-1)) === 'kevinbatdorf/animate-in-view') ||
+            getBlockName(parents.at(-1)) === blockConfig.name) ||
         // Also don't show if the current block is ours
-        getBlockName(clientId) === 'kevinbatdorf/animate-in-view'
+        getBlockName(clientId) === blockConfig.name
     ) {
         return <CurrentMenuItems {...props} />
     }

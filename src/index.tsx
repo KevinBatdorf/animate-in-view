@@ -21,11 +21,12 @@ export type Attributes = {
     offset: string
 }
 
-registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
+registerBlockType<Attributes>(blockConfig.name, {
     ...blockConfig,
     icon: blockIcon,
     // These attributes are duplicated here for TypeScript types (DefinitelyTyped)
-    // Which seemingly isn't up to date with the Gutenberg Block schema. Not 100% sure.
+    // Which seemingly isn't up to date with the Gutenberg Block schema.
+    // Not 100% sure.
     attributes: {
         animatein: {
             type: 'string',
@@ -74,10 +75,10 @@ registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
     },
 })
 
-// Filter all blocks to let them wrap with the animate block
+// Let other blocks wrap themselves with this block.
 addFilter(
     'editor.BlockEdit',
-    'kevinbatdorf/animate-in-view',
+    blockConfig.name,
     (CurrentMenuItems) => (props: any) =>
         <ToolbarMenu CurrentMenuItems={CurrentMenuItems} {...props} />,
 )
