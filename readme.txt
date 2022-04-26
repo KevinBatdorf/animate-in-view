@@ -1,4 +1,4 @@
-=== Animate In View – A Gutenberg animation in block ===
+=== Animate In View – A Gutenberg animation block ===
 Contributors:      kbat82
 Tags:              animation, animate, in view, slide, fade, intersection, observer, block
 Tested up to:      5.9
