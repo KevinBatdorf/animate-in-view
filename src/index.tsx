@@ -1,16 +1,13 @@
 import {
     InnerBlocks,
-    BlockControls,
     useBlockProps as blockProps,
-    store as blockEditorStore,
 } from '@wordpress/block-editor'
-import { createBlock, registerBlockType, cloneBlock } from '@wordpress/blocks'
-import { ToolbarButton } from '@wordpress/components'
-import { useDispatch, useSelect } from '@wordpress/data'
+import { registerBlockType } from '@wordpress/blocks'
 import { addFilter } from '@wordpress/hooks'
 import { __ } from '@wordpress/i18n'
 import blockConfig from './block.json'
 import { Controls } from './editor/Controls'
+import { ToolbarMenu } from './editor/ToolbarMenu'
 import './front/style.css'
 import { blockIcon } from './icons'
 
@@ -28,7 +25,7 @@ registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
     ...blockConfig,
     icon: blockIcon,
     // These attributes are duplicated here for TypeScript types (DefinitelyTyped)
-    // Which seemingly isn't up to date with the Gutenberg Block schema
+    // Which seemingly isn't up to date with the Gutenberg Block schema. Not 100% sure.
     attributes: {
         animatein: {
             type: 'string',
@@ -81,50 +78,6 @@ registerBlockType<Attributes>('kevinbatdorf/animate-in-view', {
 addFilter(
     'editor.BlockEdit',
     'kevinbatdorf/animate-in-view',
-    (BlockEdit) =>
-        // TODO: How best to type props here?
-        function ToolbarMenu(props: any) {
-            const { clientId } = props
-            const { getBlock, getBlockParents, getBlockName } =
-                useSelect(blockEditorStore)
-            // @ts-ignore-next-line - replaceBlock not added as a type?
-            const { replaceBlock } = useDispatch(blockEditorStore)
-
-            const handleClick = () => {
-                // Cloning will prevent recursion issues
-                const current = cloneBlock(getBlock(clientId))
-                const wrapped = createBlock(
-                    'kevinbatdorf/animate-in-view',
-                    {},
-                    [current],
-                )
-                if (!wrapped) return
-                replaceBlock(clientId, [wrapped])
-            }
-
-            // If the parent is already an animate in view block, don't show
-            const parents = getBlockParents(clientId)
-            if (
-                (parents?.length > 0 &&
-                    getBlockName(parents.at(-1)) ===
-                        'kevinbatdorf/animate-in-view') ||
-                // Also don't show if the current block is ours
-                getBlockName(clientId) === 'kevinbatdorf/animate-in-view'
-            ) {
-                return <BlockEdit {...props} />
-            }
-            return (
-                <>
-                    <BlockEdit {...props} />
-                    <BlockControls>
-                        <ToolbarButton
-                            showTooltip
-                            onClick={handleClick}
-                            label={__('Animate this block', 'animate-in-view')}
-                            icon={blockIcon}
-                        />
-                    </BlockControls>
-                </>
-            )
-        },
+    (CurrentMenuItems) => (props: any) =>
+        <ToolbarMenu CurrentMenuItems={CurrentMenuItems} {...props} />,
 )
