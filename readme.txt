@@ -1,6 +1,6 @@
-=== Animate In View – A Gutenberg animation block ===
+=== Animate In View ===
 Contributors:      kbat82
-Tags:              animate, fade, in-view, slide-in, intersection
+Tags:              animate, fade, screen, slide-in, viewport, intersection
 Tested up to:      5.9
 Stable tag:        1.0.2
 License:           GPL-2.0-or-later
@@ -11,6 +11,8 @@ An easy-to-use Gutenberg block to fade and slide in your blocks when the block c
 == Description ==
 
 Using a fast, simple, native technique, the Animate In View block will watch over inner blocks you add within it and when they come into the user's view, it will simply fade and optionally slide in.
+
+Trigger simple, smooth, modern animations as the content enters the screen.
 
 - Follow [@kevinbatdorf](https://twitter.com/kevinbatdorf) on Twitter
 - View on [GitHub](https://github.com/KevinBatdorf/animate-in-block)
