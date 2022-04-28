@@ -15,6 +15,7 @@
 
 add_action('init', function () {
     register_block_type(__DIR__ . '/build');
+    wp_set_script_translations('kevinbatdorf-animate-in-view', 'animate-in-view');
 });
 
 // The JavaScript is minimal so it's easier to just maintain it here.

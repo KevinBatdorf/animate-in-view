@@ -1,6 +1,6 @@
 === Animate In View ===
 Contributors:      kbat82
-Tags:              animate, fade, screen, slide-in, viewport, intersection, block
+Tags:              animate, block, fade, screen, slide-in, viewport, intersection
 Tested up to:      5.9
 Stable tag:        1.0.2
 License:           GPL-2.0-or-later
