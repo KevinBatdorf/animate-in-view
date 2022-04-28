@@ -19,15 +19,15 @@ Trigger simple, smooth, modern animations as the content enters the screen.
 
 = Features =
 - Both lightweight and fast, and only does one thing.
-- Set a threshold for when the block starts to animate
-- Run only once, or each time it comes in/out of view
-- Wrap any existing block with the Animate In block with the push of a button
-- Transition in left, right, or neither (fade only)
-- Change the class name used to add your own custom animations
+- Set a threshold for when the block starts to animate.
+- Run only once, or each time it comes in/out of view.
+- Wrap any existing block with the Animate In block with the push of a button.
+- Transition in left, right, or neither (fade only).
+- Change the class name used to add your own custom animations.
 
 = General Tips & Tricks =
 - You can wrap the currently selected block with an Animate In View block by pressing the icon toward the end of the toolbar.
-- You may need to place the block within a group block to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
+- You may need to place the block within a group block to ensure content styling is consistent. Some themes may require a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
 - You may need to tweak things if your layouts have custom classes or styles applied. Try copy/pasting the classes, or try to nest the blocks in a way that doesn't affect the theme styling.
 - Nest blocks to stagger animations. The animations won't start until all are in view, then one by one. But make sure you don't use an area too large for the viewport.
 - The Animate In View block comes with a single nested group block by default, but you may use others as well.
