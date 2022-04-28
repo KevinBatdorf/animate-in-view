@@ -1,21 +1,22 @@
 === Animate In View – A Gutenberg animation block ===
 Contributors:      kbat82
-Tags:              animation, animate, in view, slide, fade, intersection, observer, block
+Tags:              animate, fade, in-view, slide-in, intersection
 Tested up to:      5.9
 Stable tag:        1.0.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-A dead-simple Gutenberg block to animate in "anything" when the block comes into the user's view.
+An easy-to-use Gutenberg block to fade and slide in your blocks when the block comes into the user's view.
 
 == Description ==
 
-The Animate In View block add a simple JavaScript watcher over all the inner blocks you add within. When the Animtate In View block comes into view, it will simply fade and optionally slide in.
+Using a fast, simple, native technique, the Animate In View block will watch over inner blocks you add within it and when they come into the user's view, it will simply fade and optionally slide in.
 
 - Follow [@kevinbatdorf](https://twitter.com/kevinbatdorf) on Twitter
 - View on [GitHub](https://github.com/KevinBatdorf/animate-in-block)
 
 = Features =
+- Both lightweight and fast, and only does one thing.
 - Set a threshold for when the block starts to animate
 - Run only once, or each time it comes in/out of view
 - Wrap any existing block with the Animate In block with the push of a button
@@ -23,11 +24,13 @@ The Animate In View block add a simple JavaScript watcher over all the inner blo
 - Change the class name used to add your own custom animations
 
 = General Tips & Tricks =
-- You can wrap the currently selected block with an Animate In View block by pressing the icon toward the end of the toolbar. It will only show if it's not already the direct child of an Animate In View block.
-- You may want to place within group blocks to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
-- Nest blocks to stagger animations. The animations won't start until all are in view, then one by one.
+- You can wrap the currently selected block with an Animate In View block by pressing the icon toward the end of the toolbar.
+- You may need to place the block within a group block to ensure content styling is consistent. Some themes may reguire a group block be at the top level. Alternatively, the Animate In View block has alignment controls enabled just in case.
+- You may need to tweak things if your layouts have custom classes or styles applied. Try copy/pasting the classes, or try to nest the blocks in a way that doesn't affect the theme styling.
+- Nest blocks to stagger animations. The animations won't start until all are in view, then one by one. But make sure you don't use an area too large for the viewport.
 - The Animate In View block comes with a single nested group block by default, but you may use others as well.
 - Use the list view to drag and drop blocks into the Animate In View block.
+- Open an issue if you need an assist. I'm happy to take a look.
 
 == Installation ==
 
@@ -35,13 +38,13 @@ The Animate In View block add a simple JavaScript watcher over all the inner blo
 
 == Frequently Asked Questions ==
 
-= Can you add x feature? =
+= Can I wrap any block? =
 
-I'm purposely keeping this lightweight so don't plan on adding features, especially if it means adding bloat to the frontend. But open an issue on the GitHub repo and lets chat about it.
+Some blocks that require a specific parent block aren't supported. For example, buttons inside a button group, or images within an image gallery. For these you will need to remove them from their container and position them using the column or group blocks first.
 
 = Why a block and not just extend all blocks? =
 
-This keeps block functionality composable. This block is very lightweight and does the minimum it needs to keep track of the blocks on screen and just animate them in. If you are looking for a fully featured animation suite, this isn't it.
+This keeps block functionality composable. This block is very lightweight and does the minimum it needs to keep track of the blocks on screen and just animate them in. I want to avoid adding bulk to the front end of the site, so this plugin will remain feature minimum.
 
 == Screenshots ==
 
