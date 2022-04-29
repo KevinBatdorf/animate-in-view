@@ -35,7 +35,7 @@ document.querySelectorAll('[animatein]').forEach(function (el) {
     el.style.overflow = 'hidden';
     Array.from(el.children).forEach(function (child) {
         child.style.transform = `translateX(calc(\${offset} * \${dir}))`;
-    })
+    });
     const observer = new IntersectionObserver(function (entries) {
         if (entries[0].intersectionRatio === 0) {
             el.classList.remove(el.getAttribute('animatein'));
