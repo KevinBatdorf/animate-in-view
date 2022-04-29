@@ -38,7 +38,7 @@ registerBlockType<Attributes>(blockConfig.name, {
         },
         once: {
             type: 'number',
-            default: 0,
+            default: 1,
         },
         direction: {
             type: 'number',
