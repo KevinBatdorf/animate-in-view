@@ -4,7 +4,7 @@
  * Description:       This block will animate in as soon as it enters the viewport of the browser window. That's it.
  * Requires at least: 5.9
  * Requires PHP:      7.0
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            Kevin Batdorf
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -32,15 +32,20 @@ document.querySelectorAll('[animatein]').forEach(function (el) {
     const dir = el.getAttribute('direction');
     const offset = el.getAttribute('offset');
     el.style.opacity = 0;
-    el.style.transform = `translateX(calc(\${offset} * \${dir}))`;
+    el.style.overflow = 'hidden';
+    Array.from(el.children).forEach(function (child) {
+        child.style.transform = `translateX(calc(\${offset} * \${dir}))`;
+    })
     const observer = new IntersectionObserver(function (entries) {
         if (entries[0].intersectionRatio === 0) {
             el.classList.remove(el.getAttribute('animatein'));
+            el.style.overflow = 'hidden';
             return;
         }
         if (entries[0].intersectionRatio < Number(el.getAttribute('threshold'))) {
             return;
         }
+        el.style.overflow = 'visible';
         el.classList.add(el.getAttribute('animatein'));
         Number(el.getAttribute('once')) && observer.unobserve(el);
     }, { threshold: [Number(el.getAttribute('threshold')), 0] });
