@@ -6,7 +6,7 @@ Stable tag:        1.0.3
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-An easy-to-use Gutenberg block to fade and slide in your blocks when the block comes into the user's view.
+Fade and slide in your blocks with style as they enter into the user's view.
 
 == Description ==
 
