@@ -9,10 +9,16 @@ import { __ } from '@wordpress/i18n'
 import blockConfig from '../block.json'
 import { blockIcon } from '../icons'
 
-export const ToolbarMenu = (props: any) => {
-    const { clientId, CurrentMenuItems } = props
-    const { getBlock, getBlockParents, getBlockName } =
-        useSelect(blockEditorStore)
+export const ToolbarMenu = (
+    CurrentMenuItems: React.ComponentType,
+    props: any,
+) => {
+    const { clientId } = props
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore-next-line - getBlock not added as a type?
+    const { getBlock, getBlockParents, getBlockName } = useSelect((select) =>
+        select(blockEditorStore),
+    )
     // @ts-ignore-next-line - replaceBlock not added as a type?
     const { replaceBlock } = useDispatch(blockEditorStore)
 
