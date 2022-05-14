@@ -33,6 +33,22 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
                 <PanelBody title={__('Settings', 'animate-in-view')}>
                     <BaseControl id="main-settings">
                         <div className="animate-in-view-editor">
+                            <ToggleGroupControl
+                                onChange={(value: number) =>
+                                    update('enabled', value)
+                                }
+                                label={__('Enabled', 'animate-in-view')}
+                                value={attributes.enabled}
+                                isBlock>
+                                <ToggleGroupControlOption
+                                    value={1}
+                                    label={__('Enabled', 'animate-in-view')}
+                                />
+                                <ToggleGroupControlOption
+                                    value={0}
+                                    label={__('Disabled', 'animate-in-view')}
+                                />
+                            </ToggleGroupControl>
                             <RangeControl
                                 label={__(
                                     'Visibility threshold',

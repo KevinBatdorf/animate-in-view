@@ -1,8 +1,8 @@
 === Animate In View ===
 Contributors:      kbat82
 Tags:              animate, block, fade, screen, slide-in, viewport, intersection
-Tested up to:      5.9
-Stable tag:        1.1.0
+Tested up to:      6.0
+Stable tag:        1.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,10 @@ This keeps block functionality composable. This block is very lightweight and do
 2. Minimum controls to get the best results
 
 == Changelog ==
+
+= 1.2.0 =
+* Add enable/disable button
+* Return function instead of component from filter
 
 = 1.1.0 =
 * Switch to only showing once by default

@@ -79,6 +79,6 @@ registerBlockType<Attributes>(blockConfig.name, {
 addFilter(
     'editor.BlockEdit',
     blockConfig.name,
-    (CurrentMenuItems) => (props: any) =>
-        <ToolbarMenu CurrentMenuItems={CurrentMenuItems} {...props} />,
+    // Gutenberg seems to require this to be a function.
+    (CurrentMenuItems) => (props: any) => ToolbarMenu(CurrentMenuItems, props),
 )
