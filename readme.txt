@@ -2,7 +2,7 @@
 Contributors:      kbat82
 Tags:              animate, block, fade, screen, slide-in, viewport, intersection
 Tested up to:      6.2
-Stable tag:        1.2.1
+Stable tag:        1.2.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -54,6 +54,9 @@ This keeps block functionality composable. This block is very lightweight and do
 2. Minimum controls to get the best results
 
 == Changelog ==
+
+= 1.2.2 =
+* Chore: Update npm packages + test for WP 6.2
 
 = 1.2.1 =
 * Remove package-lock file to lower download size
