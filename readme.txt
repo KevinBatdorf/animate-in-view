@@ -1,6 +1,6 @@
 === Animate In View ===
 Contributors:      kbat82
-Tags:              animate, fade, view, screen, slide-in
+Tags:              block, animate, fade, screen, slide-in
 Tested up to:      6.6
 Stable tag:        1.2.2
 License:           GPL-2.0-or-later
