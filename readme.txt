@@ -23,6 +23,7 @@ Trigger simple, smooth, modern animations as the content enters the screen.
 - Run only once, or each time it comes in/out of view.
 - Wrap any existing block with the Animate In block with the push of a button.
 - Transition in left, right, or neither (fade only).
+- Fade only mode: Set the starting position to "none"
 - Change the class name used to add your own custom animations.
 
 = General Tips & Tricks =
@@ -47,6 +48,10 @@ Some blocks that require a specific parent block aren't supported. For example, 
 = Why a block and not just extend all blocks? =
 
 This keeps block functionality composable. This block is very lightweight and does the minimum it needs to keep track of the blocks on screen and just animate them in. I want to avoid adding bulk to the front end of the site, so this plugin will remain feature minimum.
+
+= What happens when I deactivate the plugin? =
+
+Because the block wraps other blocks, deactivating the plugin will confuse WordPress and the editor will ask you to either re-install or attempt to recover the block as html. If you must uninstall this plugin, I recommend you drag the inner blocks out of the Animate In View block before deactivating. Open an issue on GitHub if you want to discuss this further.
 
 == Screenshots ==
 
