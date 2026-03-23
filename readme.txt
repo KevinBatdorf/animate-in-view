@@ -1,7 +1,7 @@
 === Animate In View ===
 Contributors:      kbat82
 Tags:              block, animate, fade, screen, slide-in
-Tested up to:      6.6
+Tested up to:      7.0
 Stable tag:        1.2.2
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
