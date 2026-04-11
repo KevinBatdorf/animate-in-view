@@ -1,47 +1,47 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 2,
-    "name": "kevinbatdorf/animate-in-view",
-    "version": "1.0.2",
-    "title": "Animate In View",
-    "category": "common",
-    "description": "Animates a block when it comes into view.",
-    "attributes": {
-        "animatein": {
-            "type": "string",
-            "default": "animate-in-view"
-        },
-        "enabled": {
-            "type": "number",
-            "default": 1
-        },
-        "once": {
-            "type": "number",
-            "default": 1
-        },
-        "direction": {
-            "type": "number",
-            "default": 1
-        },
-        "threshold": {
-            "type": "number",
-            "default": 1.0
-        },
-        "timing": {
-            "type": "number",
-            "default": 1.0
-        },
-        "offset": {
-            "type": "string",
-            "default": "2rem"
-        }
-    },
-    "supports": {
-        "html": true,
-        "align": true
-    },
-    "textdomain": "animate-in-view",
-    "editorScript": "file:./index.js",
-    "editorStyle": "file:./index.css",
-    "style": "file:./style-index.css"
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "kevinbatdorf/animate-in-view",
+	"version": "1.0.2",
+	"title": "Animate In View",
+	"category": "common",
+	"description": "Animates a block when it comes into view.",
+	"attributes": {
+		"animatein": {
+			"type": "string",
+			"default": "animate-in-view"
+		},
+		"enabled": {
+			"type": "number",
+			"default": 1
+		},
+		"once": {
+			"type": "number",
+			"default": 1
+		},
+		"direction": {
+			"type": "number",
+			"default": 1
+		},
+		"threshold": {
+			"type": "number",
+			"default": 1.0
+		},
+		"timing": {
+			"type": "number",
+			"default": 1.0
+		},
+		"offset": {
+			"type": "string",
+			"default": "2rem"
+		}
+	},
+	"supports": {
+		"html": true,
+		"align": true
+	},
+	"textdomain": "animate-in-view",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
 }
