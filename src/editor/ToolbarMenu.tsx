@@ -14,16 +14,16 @@ export const ToolbarMenu = (
 	props: any,
 ) => {
 	const { clientId } = props;
-	// @ts-expect-error-next-line - getBlock not added as a type?
 	const { getBlock, getBlockParents, getBlockName } = useSelect((select) =>
 		select(blockEditorStore),
 	);
-	// @ts-expect-error-next-line - replaceBlock not added as a type?
 	const { replaceBlock } = useDispatch(blockEditorStore);
 
 	const handleClick = () => {
+		const block = getBlock(clientId);
+		if (!block) return;
 		// Cloning will prevent recursion issues
-		const current = cloneBlock(getBlock(clientId));
+		const current = cloneBlock(block);
 		const wrapped = createBlock(blockConfig.name, {}, [current]);
 		if (!wrapped) return;
 		replaceBlock(clientId, [wrapped]);
@@ -31,9 +31,9 @@ export const ToolbarMenu = (
 
 	// If the parent is already an animate in view block, don't show
 	const parents = getBlockParents(clientId);
+	const parentId = parents.at(-1);
 	if (
-		(parents?.length > 0 &&
-			getBlockName(parents.at(-1)) === blockConfig.name) ||
+		(parentId && getBlockName(parentId) === blockConfig.name) ||
 		// Also don't show if the current block is ours
 		getBlockName(clientId) === blockConfig.name
 	) {

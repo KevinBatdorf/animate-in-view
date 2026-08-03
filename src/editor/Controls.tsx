@@ -34,7 +34,7 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
 					<BaseControl id="main-settings">
 						<div className="animate-in-view-editor">
 							<ToggleGroupControl
-								onChange={(value: number) => update('enabled', value)}
+								onChange={(value) => update('enabled', Number(value))}
 								label={__('Enabled', 'animate-in-view')}
 								value={attributes.enabled}
 								isBlock
@@ -61,7 +61,7 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
 								onChange={(threshold) => update('threshold', threshold ?? 0.8)}
 							/>
 							<ToggleGroupControl
-								onChange={(value: number) => update('direction', value)}
+								onChange={(value) => update('direction', Number(value))}
 								label={__('Starting position', 'animate-in-view')}
 								help={__(
 									"Set this to 'None' to disable the slide animation.",
@@ -84,7 +84,7 @@ export const Controls = ({ attributes, setAttributes }: ControlProps) => {
 								/>
 							</ToggleGroupControl>
 							<ToggleGroupControl
-								onChange={(value: number) => update('once', value)}
+								onChange={(value) => update('once', Number(value))}
 								help={__(
 									"Set this to 'Infinite' to reset the animation when the element leaves the screen.",
 									'animate-in-view',
