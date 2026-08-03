@@ -1,8 +1,5 @@
 node_modules
 build
-/target
-Cargo.lock
-
-cypress/screenshots/**/*
-cypress/videos/**/*
-cypress/downloads/**/*
+tsconfig.tsbuildinfo
+test-results
+playwright-report

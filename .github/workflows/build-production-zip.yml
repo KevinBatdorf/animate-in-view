@@ -6,7 +6,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Check out code
-              uses: actions/checkout@v2
+              uses: actions/checkout@v6
+
+            - uses: actions/setup-node@v6
+              with:
+                  node-version: 22
+                  cache: 'npm'
+
             - name: npm install and build
               run: |
                   npm ci
@@ -15,7 +21,7 @@ jobs:
                   CI: true
 
             - name: Package
-              uses: actions/upload-artifact@v2
+              uses: actions/upload-artifact@v6
               with:
                   name: animate-in-view
                   retention-days: 5

@@ -1,7 +1,15 @@
 /.wordpress-org
 /.git
 /.github
+/.vscode
 /node_modules
 /assets
 /scripts
+/tests
+/test-results
+/playwright-report
 /package-lock.json
+/playwright.config.ts
+/biome.json
+/tsconfig.json
+/.editorconfig
