@@ -62,6 +62,7 @@ Because the block wraps other blocks, deactivating the plugin will confuse WordP
 
 = 1.2.3 =
 * Chore: Modernize tooling - swap ESLint/Prettier to Biome, add Playwright + WP Playground tests, update npm packages, update CI workflows
+* Tested up to WordPress 7.1
 
 = 1.2.2 =
 * Chore: Update npm packages + test for WP 6.2
