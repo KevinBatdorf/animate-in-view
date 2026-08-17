@@ -1,4 +1,6 @@
 name: Deploy to WordPress.org
+permissions:
+    contents: write
 on:
     release:
         types: [published]
@@ -8,9 +10,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout code
-              uses: actions/checkout@v6
+              uses: actions/checkout@v7
 
-            - uses: actions/setup-node@v6
+            - uses: actions/setup-node@v7
               with:
                   node-version: 22
                   cache: 'npm'
@@ -33,11 +35,9 @@ jobs:
                   SLUG: animate-in-view
 
             - name: Upload release asset
-              uses: actions/upload-release-asset@v1
+              run: |
+                  gh release upload "${{ github.event.release.tag_name }}" \
+                    "${{ steps.deploy.outputs.zip-path }}#${{ github.event.repository.name }}.zip" \
+                    --clobber
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  upload_url: ${{ github.event.release.upload_url }}
-                  asset_path: ${{ steps.deploy.outputs.zip-path }}
-                  asset_name: ${{ github.event.repository.name }}.zip
-                  asset_content_type: application/zip
