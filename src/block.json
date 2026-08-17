@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "kevinbatdorf/animate-in-view",
 	"version": "1.0.2",
 	"title": "Animate In View",
