@@ -2,7 +2,7 @@
 Contributors:      kbat82
 Tags:              block, animate, fade, screen, slide-in
 Tested up to:      7.1
-Stable tag:        1.2.3
+Stable tag:        1.2.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -59,6 +59,9 @@ Because the block wraps other blocks, deactivating the plugin will confuse WordP
 2. Minimum controls to get the best results
 
 == Changelog ==
+
+= 1.2.4 =
+* Update block to API version 3 for iframed editor compatibility
 
 = 1.2.3 =
 * Chore: Modernize tooling - swap ESLint/Prettier to Biome, add Playwright + WP Playground tests, update npm packages, update CI workflows
