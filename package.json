@@ -24,7 +24,7 @@
 		"@wordpress/e2e-test-utils-playwright": "^1.42.0",
 		"@wordpress/scripts": "^31.7.0",
 		"@wp-playground/cli": "^3.1.13",
-		"autoprefixer": "^10.4.27",
+		"autoprefixer": "^10.5.4",
 		"fast-glob": "^3.3.3",
 		"glob": "^13.0.6",
 		"postcss-import": "^16.1.1",
