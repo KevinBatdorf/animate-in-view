@@ -35,7 +35,7 @@
 	"dependencies": {
 		"@wordpress/block-editor": "^15.15.0",
 		"@wordpress/blocks": "^15.15.0",
-		"@wordpress/element": "^6.42.0",
+		"@wordpress/element": "^8.4.0",
 		"@wordpress/hooks": "^4.42.0",
 		"@wordpress/i18n": "^6.15.0",
 		"@wordpress/url": "^4.42.0"
